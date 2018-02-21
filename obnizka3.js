@@ -25,13 +25,16 @@ $(document).ready(function() {
        jQuery('.promojswynik').append('<span class="staraCena"><del>'+stara+' zł</del></span>');
     }
     else if (!isNaN(procent)){
-    	stara_Cena = Math.ceil((stara_Cena/(1-procent)));
+      stara_Cena.toFixed(2);
+      var stara_procent = (stara_Cena/(1-procent));
+       var stara_of = stara_procent.toFixed(2);
+
 
 
         $('.staraCena').remove();
         $('.promojstext').remove();
        jQuery('.promo_container').append('<div class="promojstext" style="font-size: 15px;color: #d66260; margin-bottom: 5px;">Promocja -'+procent*100+'%</div> ');
-      jQuery('.promojswynik').append('<span class="staraCena"><del>'+stara_Cena+',00 zł</del></span>');
+      jQuery('.promojswynik').append('<span class="staraCena"><del>'+stara_of+'</del></span>');
     }
     	cena =0;
         stara_Cena=0;
