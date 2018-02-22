@@ -8,20 +8,20 @@ $(document).ready(function() {
       var table;
       table = document.getElementsByClassName('product_th_cus');
 
-      console.log(table.rows[1].innerHTML+"table test rows");
+      console.log(table[0].rows[1].innerHTML+"table test rows");
 
-      for (i = 0;  i< table[0].length(); row= table[0].rows[i], i++) {
-        console.log(row[0]+"row  test");
+      for (i = 0 , row= table[0].rows[i]; i< table[0].rows.length; i++) {
+        console.log(row.innerHTML+":row  test");
            //iterate through rows
            //rows would be accessed using the "row" variable assigned in the for loop
-           for (var j = 0, col; col = row.cells[j]; j++) {
-             let text = col;
-             console.log("text  test"+text);
-          /*   if(col.indexOf("Rozmiar"))
+           for (var j = 0, col= row.cells[j]; j < row.cells.length; j++) {
+             let text = col.innerHTML;
+             console.log("text  test :"+text);
+            if(col.innerHTML.search("Rozmiar"))
              {
-               index[0]= col.
+               console.log("Mamy Rozmiar")
              }
-            */
+
              //iterate through columns
              //columns would be accessed using the "col" variable assigned in the for loop
            }
