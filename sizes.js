@@ -5,26 +5,31 @@ $(document).ready(function() {
   {
       console.log("Start indexing");
       function index_sizes(){
-      console.log('inside index');
-      var index;
-      var table;
-      table = document.getElementsByClassName('product_th_cus');
+        console.log('inside index');
+        var index;
+        var table;
+        table = document.getElementsByClassName('product_th_cus');
 
-      console.log(table[0].rows.length+"table rows length");
+        console.log(table[0].rows.length+"table rows length");
 
-      for (var i = 0, row; row = table[0].rows[i]; i++) {
-        console.log("iterator:"+i);
-         console.log("row:"+row.innerHTML);
-         //iterate through rows
-         //rows would be accessed using the "row" variable assigned in the for loop
-         for (var j = 0, col; col = row.cells[j]; j++) {
-           console.log("iterator:"+j);
-           console.log("col:"+col.innerHTML);
-           //iterate through columns
-           //columns would be accessed using the "col" variable assigned in the for loop
-         }
-      }
-        return;
+        for (var i = 0, row; row = table[0].rows[i]; i++) {
+          console.log("iterator:"+i);
+           console.log("row:"+row.innerHTML);
+           //iterate through rows
+           //rows would be accessed using the "row" variable assigned in the for loop
+           for (var j = 0, col; col = row.cells[j]; j++) {
+             console.log("iterator:"+j);
+             var col_inner = col.innerHTML;
+             if(row.cells[j].innerHTML.search("Rozmiar") !=-1)
+             {
+               console.log("Rozmiar jest:"+col_inner);
+             }
+
+             //iterate through columns
+             //columns would be accessed using the "col" variable assigned in the for loop
+           }
+        }
+          return;
       }
       index_sizes();
     }
