@@ -5,7 +5,8 @@
       function main_assign()
       {
         var tes_exi = document.getElementById('option_10');
-        if(typeof(tes_exi)!='undefined' && tes_exi !=null)
+        var tes_exi2 = document.getElementById('option_33');
+        if((typeof(tes_exi)!='undefined' && tes_exi !=null) || (typeof(tes_exi2)!='undefined' && tes_exi2 !=null) )
         {
           var index = size_index();
           var keys =[];
@@ -57,17 +58,6 @@
                 else if(col_inner.search("Rozmiar")==-1){
 
                 }
-
-
-
-
-          //     col_param=0;
-        //       col_size=0;
-               //iterate through columns
-               //columns would be accessed using the "col" variable assigned in the for loop
-
-
-           //rows would be accessed using the "row" variable assigned in the for loop
            i_index++;
 
          }
@@ -80,14 +70,18 @@
          var size_list=0;
          var ele = document.getElementById('option_10');
          var ele2 = document.getElementById('option_33');
-         if(typeof(ele)!='undefined' && ele !=null)
-         {
-           size_list= document.getElementById('option_10');
-         }
-         else if(typeof(ele2)!='undefined' && ele2 !=null)
+         if(typeof(ele2)!='undefined' && ele2 !=null)
          {
            size_list =  document.getElementById('option_33');
+           console.log("option 33");
          }
+         else if(typeof(ele)!='undefined' && ele !=null)
+         {
+           size_list= document.getElementById('option_10');
+           console.log("option 10");
+         }
+
+         console.log("Size list:"+size_list);
          var len_si = size_list.length-1;
          var len_arr = index.length;
          var arr_it = 0;
