@@ -78,11 +78,14 @@
          var index = ind;
          var size_list =  document.getElementById('option_10');
          var len_si = size_list.length-1;
-         console.log("index inh:"+index[2][1]);
-         for(var z=1;z<len_si;z++)
+         var len_arr = index.length;
+         var arr_it = 0;
+
+         for(var z=1;z<=len_si;z++)
          {
-           console.log("inside index:"+index[z][1]+"z:"+z);
-           size_list.options[z].innerHTML += index[z][1];
+           console.log("inside index:"+index[arr_it][1]+"z:"+arr_it);
+           size_list.options[z].innerHTML += " "+index[arr_it][1];
+           arr_it++;
 
          }
 
