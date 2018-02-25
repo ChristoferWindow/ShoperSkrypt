@@ -4,8 +4,8 @@
 
       function main_assign()
       {
-        var ele = document.getElementById('option_10');
-        if(typeof(ele)!='undefined' && ele !=null)
+        var tes_exi = document.getElementById('option_10');
+        if(typeof(tes_exi)!='undefined' && tes_exi !=null)
         {
           var index = size_index();
           var keys =[];
@@ -52,11 +52,12 @@
                   index[iter].push(col_inner,col_param);
                   console.log("Index+:"+index[iter]);
                   console.log("Ind:"+col_inner+"Val:"+col_param);
+                  iter++;
                 }
                 else if(col_inner.search("Rozmiar")==-1){
 
                 }
-                iter++;
+
 
 
 
@@ -76,7 +77,17 @@
       function assign_values(ind){
          console.log("assing values");
          var index = ind;
-         var size_list =  document.getElementById('option_10');
+         var size_list=0;
+         var ele = document.getElementById('option_10');
+         var ele2 = document.getElementById('option_33');
+         if(typeof(ele)!='undefined' && ele !=null)
+         {
+           size_list= document.getElementById('option_10');
+         }
+         else if(typeof(ele2)!='undefined' && ele2 !=null)
+         {
+           size_list =  document.getElementById('option_33');
+         }
          var len_si = size_list.length-1;
          var len_arr = index.length;
          var arr_it = 0;
@@ -84,7 +95,7 @@
          for(var z=1;z<=len_si;z++)
          {
            console.log("inside index:"+index[arr_it][1]+"z:"+arr_it);
-           size_list.options[z].innerHTML += " "+index[arr_it][1];
+           size_list.options[z].innerHTML += "  ("+index[arr_it][1]+")";
            arr_it++;
 
          }
