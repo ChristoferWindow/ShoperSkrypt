@@ -1,9 +1,11 @@
 <script>
-$(document).ready(function() {
 
+$(document).ready(function() {
+	$('#promojstext').css('visibility','hidden');
 	if(document.getElementById('przecenajs')!==null)
 	{
   function promo_price() {
+  $('#promojstext').css('visibility','visible');
 	var cena = 0;
 	var stara_Cena=0;
 	var procent =0;
