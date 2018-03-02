@@ -1,3 +1,4 @@
+<script>
 $(document).ready(function() {
 
 	if(document.getElementById('przecenajs')!==null)
@@ -42,6 +43,10 @@ $(document).ready(function() {
 	}
   setInterval(promo_price,300);
 	}
+    else
+    {
+    	$('.promojstext').css('visibility','hidden');
+    }
 
 
 
@@ -49,3 +54,5 @@ $(document).ready(function() {
 $(document).ajaxComplete(function(){
   promo_price();
 });
+
+</script>
