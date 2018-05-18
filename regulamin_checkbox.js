@@ -17,3 +17,4 @@ var isAllChecked = function( className ){
 }
 var required_check = $(" #kontakt-sc .required_box input[type='checkbox']");
 var submmit_butt = $("#kontakt-sc input[type='submit']");
+if(
