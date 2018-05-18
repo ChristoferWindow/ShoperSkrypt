@@ -25,7 +25,7 @@ $(" #kontakt-sc  input[type='checkbox']").click(function(event){
       $("#kontakt-sc input[type='submit']").prop("disabled", false); // Element(s) are now enabled.
   }
   else{
-
+    $(".f-grid").append("Coś mi się tu wyświetla");
   }
 
 });
