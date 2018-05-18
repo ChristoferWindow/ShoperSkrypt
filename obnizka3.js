@@ -1,11 +1,10 @@
 <script>
-
 $(document).ready(function() {
-	$('#promojstext').css('visibility','hidden');
-	if(document.getElementById('przecenajs')!==null)
+	$('.promojstext').css('display','none');
+	if($('#przecenajs').length && (!isNaN($('#przecenajs').attr('data-procent')) || !isNaN($('#przecenajs').attr('data-cena'))))
 	{
-  function promo_price() {
-  $('#promojstext').css('visibility','visible');
+  function promo_price()
+	{
 	var cena = 0;
 	var stara_Cena=0;
 	var procent =0;
@@ -16,7 +15,11 @@ $(document).ready(function() {
     stara_Cena = jQuery('.main-price').html();
     stara_Cena = stara_Cena.substring(0, 5);
     stara_Cena = parseFloat(stara_Cena.split(',').join('.'));
-    if (!isNaN(cena) ) {
+		if(isNaN(cena) && isNaN(procent))
+		{
+			$('.promojstext').css('display','none');
+		}
+    else if (!isNaN(cena) && cena>0 ) {
        cena = parseInt(cena);
        stara_Cena = (stara_Cena+cena);
        var stara = stara_Cena.toFixed(2);
@@ -27,7 +30,7 @@ $(document).ready(function() {
        jQuery('.promo_container').append('<div class="promojstext" style="">promocja -'+cena+',00 zł</div> ');
        jQuery('.promojswynik').append('<span class="staraCena"><del>'+stara+' zł</del></span>');
     }
-    else if (!isNaN(procent)){
+    else if (!isNaN(procent)  && procent>0 ){
       stara_Cena.toFixed(2);
       var stara_procent = (stara_Cena/(1-procent));
        var stara_of = stara_procent.toFixed(0);
@@ -47,14 +50,7 @@ $(document).ready(function() {
 	}
     else
     {
-    	$('.promojstext').css('visibility','hidden');
+    	$('.promojstext').css('display','none');
     }
-
-
-
 });
-$(document).ajaxComplete(function(){
-  promo_price();
-});
-
 </script>
