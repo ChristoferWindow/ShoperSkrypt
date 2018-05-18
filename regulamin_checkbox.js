@@ -15,6 +15,17 @@ var isAllChecked = function( className ){
 
   return isAllchecked;
 }
-var required_check = $(" #kontakt-sc .required_box input[type='checkbox']");
+var required_check = $(" #kontakt-sc  input[type='checkbox']");
 var submmit_butt = $("#kontakt-sc input[type='submit']");
-if(
+$("#kontakt-sc input[type='submit']").prop("disabled",true);
+
+$(" #kontakt-sc  input[type='checkbox']").click(function(event){
+  if(isAllChecked(required_check))
+  {
+      $("#kontakt-sc input[type='submit']").prop("disabled", false); // Element(s) are now enabled.
+  }
+  else{
+
+  }
+
+});
